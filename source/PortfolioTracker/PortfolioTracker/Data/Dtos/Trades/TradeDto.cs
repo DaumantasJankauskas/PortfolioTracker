@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 
 namespace PortfolioTracker.Data.Dtos.Trades
 {
-    public record TradeDto([Required] string Name, [Required] int AssetId, [Required] int Quantity,
-        [Required] float AveragePrice, [Required] DateTime ExecutionDate, [Required] TradeType Type, [Required] int PortfolioId);
+    public record TradeDto(int Id, [Required] string Name, int Quantity, int AssetId, float AveragePrice, [Required] DateTime ExecutionDate, int PortfolioId);
 
 }

@@ -20,9 +20,9 @@ namespace PortfolioTracker.Data.Repositories
     {
         private readonly PortfolioTrackerContext _portfolioTrackerContext;
 
-        public TradeRepository(PortfolioTrackerContext demoRestContext)
+        public TradeRepository(PortfolioTrackerContext portfolioTrackerContext)
         {
-            _portfolioTrackerContext = demoRestContext;
+            _portfolioTrackerContext = portfolioTrackerContext;
         }
 
         public async Task<Trade> GetAsync(int portfolioId, int tradeId)

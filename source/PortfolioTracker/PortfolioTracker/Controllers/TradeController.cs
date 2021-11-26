@@ -3,22 +3,21 @@ using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
 using PortfolioTracker.Data.Dtos.Trades;
-using PortfolioTracker.Data.Dtos.Portfolios;
 using PortfolioTracker.Data.Entities;
 using PortfolioTracker.Data.Repositories;
 using Microsoft.AspNetCore.Mvc;
 
-namespace DemoRestSimonas.Controllers
+namespace PortfolioTracker.Controllers
 {
     [ApiController]
-    [Route("api/portfolios/{portfoliosId}/trades")]
-    public class PostsController : ControllerBase
+    [Route("api/portfolios/{portfolioId}/trades")]
+    public class TradesController : ControllerBase
     {
         private readonly ITradeRepository _tradesRepository;
         private readonly IMapper _mapper;
         private readonly IPortfolioRepository _portfoliosRepository;
 
-        public PostsController(ITradeRepository tradesRepository, IMapper mapper, IPortfolioRepository portfoliosRepository)
+        public TradesController(ITradeRepository tradesRepository, IMapper mapper, IPortfolioRepository portfoliosRepository)
         {
             _tradesRepository = tradesRepository;
             _mapper = mapper;
@@ -46,7 +45,7 @@ namespace DemoRestSimonas.Controllers
         public async Task<ActionResult<TradeDto>> PostAsync(int portfolioId, CreateTradeDto tradeDto)
         {
             var portfolio = await _portfoliosRepository.GetAsync(portfolioId);
-            if (portfolio == null) return NotFound($"Couldn't find a topic with id of {portfolioId}");
+            if (portfolio == null) return NotFound($"Couldn't find a portfolio with id of {portfolioId}");
 
             var trade = _mapper.Map<Trade>(tradeDto);
             trade.PortfolioId = portfolioId;

@@ -5,5 +5,5 @@ using System.Threading.Tasks;
 
 namespace PortfolioTracker.Data.Dtos.Portfolios
 {
-    public record UpdatePortfolioDto(string Description);
+    public record UpdatePortfolioDto(string Title, string Description, float Value, DateTime CreationTimeUtc);
 }

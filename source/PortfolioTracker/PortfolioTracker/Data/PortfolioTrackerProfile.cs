@@ -3,6 +3,7 @@ using PortfolioTracker.Data.Dtos.Portfolios;
 using PortfolioTracker.Data.Dtos.Assets;
 using PortfolioTracker.Data.Dtos.Trades;
 using PortfolioTracker.Data.Entities;
+using PortfolioTracker.Data.Dtos.Auth;
 
 namespace PortfolioTracker.Data
 {
@@ -18,9 +19,11 @@ namespace PortfolioTracker.Data
             CreateMap<UpdatePortfolioDto, Portfolio>();
             CreateMap<Portfolio, PortfolioDto>();
 
-            CreateMap<CreatePortfolioDto, Trade>();
-            CreateMap<UpdatePortfolioDto, Trade>();
+            CreateMap<CreateTradeDto, Trade>();
+            CreateMap<UpdateTradeDto, Trade>();
             CreateMap<Trade, TradeDto>();
+
+            CreateMap<PortfolioUser, UserDto>();
         }
     }
 }
