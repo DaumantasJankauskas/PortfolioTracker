@@ -8,5 +8,5 @@ using System.Threading.Tasks;
 namespace PortfolioTracker.Data.Dtos.Auth
 {
     
-    public record RegisterUserDto([Required] string UserName, [EmailAddress][Required] string Email, [Required] string Password );
+    public record RegisterUserDto([Required] string UserName, [EmailAddress][Required] string Email, [Required] string Password, [Required] string Type);
 }
